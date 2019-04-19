@@ -1,0 +1,8 @@
+spring:
+  application:
+    name: api-nexity
+  cloud:
+    config:
+      enabled: false
+    consul:
+      enabled: false
