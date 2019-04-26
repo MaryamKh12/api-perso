@@ -1,6 +1,7 @@
 package org.project.controller;
 
 
+import org.project.model.Volet;
 import org.project.service.VoletService;
 import org.springframework.web.bind.annotation.*;
 
@@ -13,15 +14,14 @@ public class VoletController {
         this.voletService = voletService;
     }
 
-
-
     @PostMapping("/volets")
-    public String addVolet(@RequestParam String numero,
+    public Integer addVolet(@RequestParam Integer numero,
                            @RequestParam String libelle,
                            @RequestParam String pieceRattachement,
                            @RequestParam Integer pourcentageFermeture,
-                           @RequestParam Integer etat) {
-        return voletService.addVolet(numero, libelle, pieceRattachement, pourcentageFermeture, etat);
+                           @RequestParam Integer etat,
+                           @RequestParam String email) {
+        return voletService.addVolet(numero, libelle, pieceRattachement, pourcentageFermeture, etat, email);
     }
 
     @DeleteMapping("/volets/{numero}")
